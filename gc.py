@@ -5,11 +5,12 @@ from L import *
 """
 
 """
-rand = random.randint(0, 99)
-print(rand)
+def main():
+    rand = random.randint(0, 99)
+    print(rand)
 
 def stat(Base, EV, IV, Level):
-    """Arguments: 
+    """Arguments:
        Base: The base stat of the pokemon
        EV: The EV of the specific stat
        IV: The IV of the specific stat
@@ -24,7 +25,7 @@ def stat(Base, EV, IV, Level):
     return round(Stat)
 
 def hp(Base, EV, IV, Level):
-    """Arguments: 
+    """Arguments:
        Base: The base HP of the pokemon
        EV: The EV of HP
        IV: The IV of HP
@@ -155,7 +156,7 @@ def xp(WOT, Base, WLevel, KOLevel, num=1):
        Base: The xp gain of the pokemon
        WLevel: The winning pokemon level
        KOLevel: The losing pokemon level
-       """ 
+       """
     topRight1 = 2*KOLevel + 10
     topRight = topRight1**2.5
     bottomRight1 = KOLevel + WLevel + 19
@@ -250,3 +251,5 @@ def shinyTrials(number, shinyCharm=0):
 #Mini functions
 timerBall = lambda turns: min((turns * (1229/4096)) + 1, 4)
 bars = lambda a,b: round((100 - ((a / b) * 100))/5)
+if __name__ == "__main__":
+    main()
