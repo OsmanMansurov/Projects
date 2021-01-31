@@ -30,4 +30,18 @@ def caesar_decrypt(plaintext, key):
 
 def atbash(plaintext):
     result = ""
-    
+    alphabetU, alphabetL = string.ascii_uppercase, string.ascii_lowercase
+    reversedU = alphabetU[::-1]
+    reversedL = alphabetL[::-1]
+    for i in plaintext:
+        if i.isupper():
+            index = alphabetU.find(i)
+            result += reversedU[index]
+        elif i.islower():
+            index = alphabetL.find(i)
+            result += reversedL[index]
+        else:
+            result += i
+    return result
+
+print(atbash("Run dude!"))
