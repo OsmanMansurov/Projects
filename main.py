@@ -1,4 +1,4 @@
-import random
+import string
 
 #cipher storage
 
@@ -27,3 +27,7 @@ def caesar_decrypt(plaintext, key):
         else:
             result += i
     return result
+
+def atbash(plaintext):
+    result = ""
+    
