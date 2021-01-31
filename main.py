@@ -43,5 +43,3 @@ def atbash(plaintext):
         else:
             result += i
     return result
-
-print(atbash("Run dude!"))
