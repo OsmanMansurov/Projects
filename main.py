@@ -98,3 +98,38 @@ def railfence_decrypt(s,n):
         if rail == n-1 or rail == 0:
             var = -var
     return r
+
+def affine_encrypt(message, a, b):
+    """Arguments:
+       a: a number that MUST be coprime with 26
+       b: an arbitrary number"""
+    result = ""
+    for i in message:
+        if i.isupper():
+            x = a * ord(i)
+            newChar = chr((x + b - 65) % 26 + 65)
+            result += newChar
+        elif i.islower():
+            x = a * ord(i)
+            newChar = chr((x + b - 97) % 26 + 97)
+            result += newChar
+        else:
+            result += i
+    return result
+
+def affine_decrypt(message, a, b):
+    result = ""
+    for i in message:
+        for j in range(0, 26):
+            if (a * j) % 26 == 1:
+                modInverse = j
+                break
+        if i.isupper():
+            newChar = chr((modInverse * (ord(i) - b - 65)) % 26 + 65)
+            result += newChar
+        elif i.islower():
+            newChar = chr((modInverse * (ord(i) - b - 97)) % 26 + 97)
+            result += newChar
+        else:
+            result += i
+    return result
