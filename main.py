@@ -104,32 +104,21 @@ def affine_encrypt(message, a, b):
        a: a number that MUST be coprime with 26
        b: an arbitrary number"""
     result = ""
+    message = message.upper()
     for i in message:
-        if i.isupper():
-            x = a * ord(i)
-            newChar = chr((x + b - 65) % 26 + 65)
-            result += newChar
-        elif i.islower():
-            x = a * ord(i)
-            newChar = chr((x + b - 97) % 26 + 97)
-            result += newChar
-        else:
-            result += i
+        x = a * ord(i)
+        newChar = chr((x + b - 65) % 26 + 65)
+        result += newChar
     return result
 
 def affine_decrypt(message, a, b):
     result = ""
+    message = message.upper()
     for i in message:
         for j in range(0, 26):
             if (a * j) % 26 == 1:
                 modInverse = j
                 break
-        if i.isupper():
-            newChar = chr((modInverse * (ord(i) - b - 65)) % 26 + 65)
-            result += newChar
-        elif i.islower():
-            newChar = chr((modInverse * (ord(i) - b - 97)) % 26 + 97)
-            result += newChar
-        else:
-            result += i
+        newChar = chr((modInverse * (ord(i) - b - 65)) % 26 + 65)
+        result += newChar
     return result
