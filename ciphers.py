@@ -2,6 +2,7 @@ import string
 
 #cipher storage
 
+#the caesar cipher
 def caesar_encrypt(plaintext, key):
     """plaintext, the text to encrypt. key, a key from 1 to 26"""
     result = ""
@@ -30,6 +31,7 @@ def caesar_decrypt(ciphertext, key):
             result += i
     return result
 
+#the atbash cipher
 def atbash(text):
     """plaintext: enter in the plaintext to encrypt, ciphertext to decrypt"""
     result = ""
@@ -47,6 +49,7 @@ def atbash(text):
             result += i
     return result
 
+#the rail fence cipher
 def railfence_encrypt(s,n):
     fence = [[] for i in range(n)]
     rail = 0
@@ -98,6 +101,7 @@ def railfence_decrypt(s,n):
         if rail == n-1 or rail == 0:
             var = -var
     return r
+#the affine cipher
 
 def affine_encrypt(message, a, b):
     """Arguments:
@@ -122,3 +126,5 @@ def affine_decrypt(message, a, b):
         newChar = chr((modInverse * (ord(i) - b - 65)) % 26 + 65)
         result += newChar
     return result
+
+#the hill cipher
