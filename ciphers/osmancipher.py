@@ -16,9 +16,12 @@ def main():
         else:
             print("Invalid input")
         inp2 = input("Do you wish to exit? y/n: ")
-        if inp2 == "y" or inp2 == "Y": break
-        elif inp2 == "n" or inp2 == "N": continue
-        else: print("Confused. Continuing loop.")
+        if inp2 == "y" or inp2 == "Y":
+            break
+        elif inp2 == "n" or inp2 == "N":
+            continue
+        else:
+            print("Confused. Continuing loop.")
 
 
 def encrypt(plaintext, a, b):
