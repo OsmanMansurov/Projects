@@ -1,6 +1,6 @@
 # Projects
-The raw code project is located in the folder ciphers, where there is a Python script named ciphers.py.
-The helper code is contained in the same folder, a file named helper.py.
+The raw code project is located in the folder ciphers, where there is a Python script named **ciphers.py**.
+The helper code is contained in the same folder, a file named **helper.py**.
 
 ## How To Use:
 ### Running the raw code:
