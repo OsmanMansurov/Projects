@@ -38,14 +38,6 @@ def encrypt(plaintext, a, b):
                 x = a * alphabetL.find(i)
                 newChar = alphabetL[(x + b) % 26]
                 result += newChar
-        elif i == ".":
-            result += ","
-        elif i == "?":
-            result += "$"
-        elif i == "!":
-            result += "#"
-        elif i == "'":
-            result += "."
         else:
             result += i
     return result
@@ -68,14 +60,6 @@ def decrypt(ciphertext, a, b):
                 index = alphabetL.find(i)
                 newChar = alphabetL[(modInverse * (index - b)) % 26]
                 result += newChar
-        elif i == ",":
-            result += "."
-        elif i == "$":
-            result += "?"
-        elif i == "#":
-            result += "!"
-        elif i == ".":
-            result += "'"
         else:
             result += i
     return result
